@@ -18,8 +18,11 @@ export function useScrapedWebsite() {
     if (!loading) return;
 
     const timer = setTimeout(() => {
-      toast.info(message);
-    }, 8000);
+      toast.info(message, {
+        duration: 15000,
+        closeButton: true,
+      });
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [loading]);
