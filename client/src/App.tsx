@@ -50,10 +50,15 @@ const App = () => {
               LLM Engineering Playground
             </p>
 
-            <h1 className="mt-6 bg-[#fc5523] p-4 text-5xl font-semibold tracking-tight text-[#020202] sm:text-6xl">
-              Website Scraping Systems
-            </h1>
+            <h1 className="mt-6 text-5xl font-black tracking-tight sm:text-8xl">
+              <span className="block text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]">
+                WEB SCRAPING
+              </span>
 
+              <span className="block bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+                WITH AI
+              </span>
+            </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
               Compare a traditional scraping workflow with an AI-powered OpenAI
               summarization pipeline side by side.
