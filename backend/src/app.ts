@@ -3,10 +3,19 @@ import cors from "cors";
 import ollamaRoutes from "./modules/summarizer/ollama/ollama.routes";
 import openaiRoutes from "./modules/summarizer/openai/openai.routes";
 import brochureRoutes from "./modules/brochure/brochure.routes";
+import { env } from "./config/env";
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins =
+  env.NODE_ENV === "production" ? [env.CLIENT_URL] : ["http://localhost:5173"];
+
+app.use(
+  cors({
+    origin: allowedOrigins as string[],
+    credentials: true,
+  }),
+);
 
 app.use(express.json());
 

@@ -1,10 +1,11 @@
 import OpenAI from "openai";
 import dotenv from "dotenv";
+import { env } from "./env";
 
 dotenv.config();
 
-console.log("OpenAI key exists:", Boolean(process.env.OPENAI_API_KEY));
+console.log("OpenAI key exists:", Boolean(env.OPENAI_API_KEY));
 
 export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: env.OPENAI_API_KEY,
 });
