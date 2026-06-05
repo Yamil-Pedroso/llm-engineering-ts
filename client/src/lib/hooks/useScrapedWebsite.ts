@@ -1,8 +1,9 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   fetchScrapedWebsite,
   type OllamaAISummaryResponse,
 } from "../../services/scrapedWebsiteService";
+import { toast } from "sonner";
 
 export function useScrapedWebsite() {
   const [data, setData] = useState<OllamaAISummaryResponse[]>([]);
@@ -10,7 +11,18 @@ export function useScrapedWebsite() {
   const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState("Idle");
   const [error, setError] = useState<string | null>(null);
+  const message =
+    "Ollama 3.2 is running locally on our VPS. This may take a little longer than OpenAI. Please wait while the model analyzes the website.";
 
+  useEffect(() => {
+    if (!loading) return;
+
+    const timer = setTimeout(() => {
+      toast.info(message);
+    }, 8000);
+
+    return () => clearTimeout(timer);
+  }, [loading]);
   const scrape = useCallback(async (url: string) => {
     if (!url.trim()) {
       setError("Please enter a valid URL");
