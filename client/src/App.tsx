@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ScrapedPageView } from "./components/ScrapedPageView";
 import { OpenAISummaryView } from "./components/OpenAISummaryView";
+import { AiSdkExamples } from "./components/AiSdkExamples";
 import { Toaster } from "sonner";
 
 const containerVariants = {
@@ -39,27 +40,26 @@ const App = () => {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="min-h-screen px-6 py-12 text-white"
+        className="relative min-h-screen overflow-hidden bg-[#f4f0ea] px-6 py-12 text-slate-950"
       >
-        <div className="mx-auto flex max-w-7xl flex-col">
+        <div className="relative mx-auto flex max-w-7xl flex-col">
           <motion.div
             variants={itemVariants}
             className="mx-auto mb-16 max-w-4xl text-center"
           >
-            <p className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400 shadow-sm backdrop-blur">
+            <p className="inline-flex rounded-full border border-white/70 bg-white/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm backdrop-blur-2xl">
               LLM Engineering Playground
             </p>
 
             <h1 className="mt-6 text-5xl font-black tracking-tight sm:text-8xl">
-              <span className="block text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]">
-                WEB SCRAPING
-              </span>
+              <span className="block text-slate-950">WEB SCRAPING</span>
 
               <span className="block bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
                 WITH AI
               </span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-500">
               Compare a traditional scraping workflow with an AI-powered OpenAI
               summarization pipeline side by side.
             </p>
@@ -70,12 +70,9 @@ const App = () => {
               variants={itemVariants}
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
-              className="relative overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+              className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 shadow-[0_24px_70px_rgba(15,23,42,0.14)] backdrop-blur-2xl"
             >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/60 to-transparent" />
-              <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-3xl" />
-
-              <div className="relative p-6">
+              <div className="relative p-5 sm:p-6 bg-[#111111]">
                 <ScrapedPageView />
               </div>
             </motion.div>
@@ -84,16 +81,17 @@ const App = () => {
               variants={itemVariants}
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
-              className="relative overflow-hidden rounded-[32px] shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+              className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 shadow-[0_24px_70px_rgba(15,23,42,0.14)] backdrop-blur-2xl"
             >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent" />
-              <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl" />
-
-              <div className="relative p-6">
+              <div className="relative p-5 sm:p-6 bg-[#111111]">
                 <OpenAISummaryView />
               </div>
             </motion.div>
           </section>
+
+          <motion.div variants={itemVariants}>
+            <AiSdkExamples />
+          </motion.div>
         </div>
       </motion.main>
     </>

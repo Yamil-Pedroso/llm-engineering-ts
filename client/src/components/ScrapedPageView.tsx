@@ -46,7 +46,7 @@ export function ScrapedPageView() {
         <button
           type="submit"
           disabled={loading}
-          className="min-h-12 bg-indigo-500 px-6 py-3 font-medium text-white transition-all hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-50"
+          className="min-h-12 rounded-full bg-indigo-500 px-6 py-3 font-medium text-white transition-all hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
         >
           {loading ? "Scraping..." : "Scrape"}
         </button>

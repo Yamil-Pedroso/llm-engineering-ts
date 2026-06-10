@@ -30,8 +30,7 @@ export function OpenAISummaryView() {
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-400">
-          Insert a URL, extract its content, summarize it with OpenAI, and view
-          token and performance metrics.
+          Insert a URL, extract its content, summarize it with OpenAI.
         </p>
       </div>
 
@@ -48,7 +47,7 @@ export function OpenAISummaryView() {
 
         <button
           disabled={loading}
-          className="min-h-12 bg-emerald-500 px-6 py-3 font-medium text-white transition-all hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-50"
+          className="min-h-12 rounded-full  bg-emerald-500 px-6 py-3 font-medium text-white transition-all hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
         >
           {loading ? "Working..." : "Summarize"}
         </button>
