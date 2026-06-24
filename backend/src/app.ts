@@ -7,6 +7,8 @@ import aiSdkRoutes from "./modules/ai-sdk/aiSdk.routes";
 import toolPlannerRoutes from "./modules/tool-planner/toolPlanner.routes";
 import flightTicketsRoutes from "./modules/flight-tickets/flightTickets.routes";
 import pipelinesRoutes from "./modules/pipelines/pipelines.routes";
+import tokenizerRoutes from "./modules/tokenizer/tokenizer.routes";
+import quantizationRoutes from "./modules/quantization/quantization.routes";
 import { env } from "./config/env";
 
 const app = express();
@@ -54,6 +56,10 @@ app.use("/api/v1", aiSdkRoutes);
 app.use("/api/v1", toolPlannerRoutes);
 app.use("/api/v1", flightTicketsRoutes);
 app.use("/api/v1", pipelinesRoutes);
+app.use("/api/v1", tokenizerRoutes);
+app.use("/api/v1", quantizationRoutes);
 app.use("/api", pipelinesRoutes);
+app.use("/api", tokenizerRoutes);
+app.use("/api", quantizationRoutes);
 
 export default app;

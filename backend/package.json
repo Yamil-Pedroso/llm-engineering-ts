@@ -22,6 +22,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "js-tiktoken": "^1.0.21",
     "langchain": "^1.4.2",
     "mongoose": "^9.6.2",
     "ollama": "^0.6.3",

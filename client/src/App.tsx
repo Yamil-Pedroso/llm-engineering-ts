@@ -5,6 +5,8 @@ import { AiSdkExamples } from "./components/AiSdkExamples";
 import { ToolPlannerView } from "./components/ToolPlannerView";
 import { FlightTicketsView } from "./components/FlightTicketsView";
 import { PipelinesPage } from "./components/PipelinesPage";
+import { TokenizerPlayground } from "./components/TokenizerPlayground";
+import { QuantizationPlayground } from "./components/QuantizationPlayground";
 import { Toaster } from "sonner";
 
 const containerVariants = {
@@ -106,6 +108,14 @@ const App = () => {
 
           <motion.div variants={itemVariants}>
             <PipelinesPage />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <TokenizerPlayground />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <QuantizationPlayground />
           </motion.div>
         </div>
       </motion.main>
