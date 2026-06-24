@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { ScrapedPageView } from "./components/ScrapedPageView";
 import { OpenAISummaryView } from "./components/OpenAISummaryView";
 import { AiSdkExamples } from "./components/AiSdkExamples";
+import { ToolPlannerView } from "./components/ToolPlannerView";
+import { FlightTicketsView } from "./components/FlightTicketsView";
+import { PipelinesPage } from "./components/PipelinesPage";
 import { Toaster } from "sonner";
 
 const containerVariants = {
@@ -91,6 +94,18 @@ const App = () => {
 
           <motion.div variants={itemVariants}>
             <AiSdkExamples />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <ToolPlannerView />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <FlightTicketsView />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <PipelinesPage />
           </motion.div>
         </div>
       </motion.main>

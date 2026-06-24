@@ -29,6 +29,8 @@ export const env = {
   POSTGRES_PASSWORD: process.env.POSTGRES_PASSWORD,
   POSTGRES_DB: process.env.POSTGRES_DB,
   OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+  HF_API_KEY: process.env.HF_API_KEY,
+  PIPELINES_PROVIDER: process.env.PIPELINES_PROVIDER,
   NODE_ENV: process.env.NODE_ENV,
   CLIENT_URL: process.env.CLIENT_URL,
 };

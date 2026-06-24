@@ -4,6 +4,9 @@ import ollamaRoutes from "./modules/summarizer/ollama/ollama.routes";
 import openaiRoutes from "./modules/summarizer/openai/openai.routes";
 import brochureRoutes from "./modules/brochure/brochure.routes";
 import aiSdkRoutes from "./modules/ai-sdk/aiSdk.routes";
+import toolPlannerRoutes from "./modules/tool-planner/toolPlanner.routes";
+import flightTicketsRoutes from "./modules/flight-tickets/flightTickets.routes";
+import pipelinesRoutes from "./modules/pipelines/pipelines.routes";
 import { env } from "./config/env";
 
 const app = express();
@@ -48,5 +51,9 @@ app.use("/api/v1", ollamaRoutes);
 app.use("/api/v1", openaiRoutes);
 app.use("/api/v1", brochureRoutes);
 app.use("/api/v1", aiSdkRoutes);
+app.use("/api/v1", toolPlannerRoutes);
+app.use("/api/v1", flightTicketsRoutes);
+app.use("/api/v1", pipelinesRoutes);
+app.use("/api", pipelinesRoutes);
 
 export default app;
